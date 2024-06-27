@@ -14,7 +14,7 @@ class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4"
     <div class="flex">
         <img
             class="hidden w-48 mr-6 md:block"
-            src="{{asset('images/no-image.png')}} "
+            src="{{asset('images/AgriTRACK.png')}} "
             alt=""
         />
         <div> 
@@ -26,28 +26,25 @@ class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4"
                 <li
                     class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
                 >
-                    <a href="#">Laravel</a>
+                    <a href="#">Market Insights</a>
                 </li>
                 <li
                     class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
                 >
-                    <a href="#">API</a>
+                    <a href="#">Milk Data</a>
                 </li>
                 <li
                     class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
                 >
-                    <a href="#">Backend</a>
+                    <a href="#">Performance Dashboard</a>
                 </li>
                 <li
                     class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
                 >
-                    <a href="#">Vue</a>
+                    <a href="#">Payment</a>
                 </li>
             </ul>
-            <div class="text-lg mt-4">
-                <i class="fa-solid fa-location-dot"></i> 
-                {{$listing->location}}
-            </div>
+            
         </div>
     </div>
 </div>
