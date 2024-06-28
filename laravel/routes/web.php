@@ -22,5 +22,7 @@ Route::get ('/listings/{id}',function ($id){
 });
 
 //register
-Route::get ('register',[RegisterController::class, 'show'])->name('register');
-Route::post('register',[RegisterController::class, 'store']);       
+//use App\Http\Controllers\RegisterController;
+
+Route::get('/register', [RegisterController::class, 'show'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
