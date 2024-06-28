@@ -4,24 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\Register;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
-    // Register controller.
     public function store(Request $request)
     {
         $formFields = $request->validate([
             'role' => 'required',
-            'username' => 'required',
+            'username' => 'required|unique:register,username',
             'password' => 'required',
             'phone' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:register,email',
             'town' => 'required',
         ]);
 
+        // Hash the password before storing it
+        $formFields['password'] = Hash::make($formFields['password']);
+
         Register::create($formFields);
 
-        return redirect('listings')->with('message', 'Registration successful');
+        // Flashing message for successful registration
+        Session::flash('message', 'Welcome, ' . ucfirst($formFields['role']) . '! Registration successful.');
+
+        return redirect()->route('login');
     }
 
     public function show()
@@ -29,3 +36,4 @@ class RegisterController extends Controller
         return view('register');
     }
 }
+

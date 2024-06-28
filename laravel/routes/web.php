@@ -23,6 +23,17 @@ Route::get ('/listings/{id}',function ($id){
 
 //register
 //use App\Http\Controllers\RegisterController;
+//use App\Http\Controllers\RegisterController;
+//use App\Http\Controllers\LoginController;
 
 Route::get('/register', [RegisterController::class, 'show'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Protected route example
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth');
