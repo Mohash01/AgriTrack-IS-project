@@ -84,10 +84,10 @@
 
             // Here you can add code to redirect the user or show a success message
             // For example:
-            // alert('Registration successful!');
+             alert('Registration successful!');
 
             // Redirect to the login page
-            // window.location.href = '/';
+             window.location.href = '/';
         });
     </script>
 </body>
