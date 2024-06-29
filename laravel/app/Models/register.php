@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class register extends Model
+class Register extends Model
 {
     use HasFactory;
-protected $table='register';
+    
+    protected $table = 'register';
 
-protected $fillable=[
-
-    'role','username','password',
-    'phone','email','town'
-];
+    protected $fillable = [
+        'role', 'username', 'password', 'phone', 'email', 'town',
+    ];
 }

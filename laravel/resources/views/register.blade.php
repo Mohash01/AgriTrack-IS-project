@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +34,8 @@
     <div class="flex items-center justify-center min-h-screen bg-lightGray">
         <div class="bg-white p-6 rounded-lg shadow-lg w-96">
             <h2 class="text-2xl font-bold mb-4">Register</h2>
-            <form id="registration-form" action="{{ route('register')}}" method='post'>
+            <form id="registration-form" action="{{ route('register.store') }}" method="POST">
+                @csrf
                 <div class="mb-4">
                     <label for="role" class="block text-gray-700">Role</label>
                     <select id="role" name="role" class="w-full p-2 border border-gray-300 rounded mt-1">
