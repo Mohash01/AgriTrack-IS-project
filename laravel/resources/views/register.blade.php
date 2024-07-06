@@ -71,5 +71,24 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Here you can add code to handle the form submission, e.g., sending data to your server
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            console.log('Form Data:', data);
+
+            // Here you can add code to redirect the user or show a success message
+            // For example:
+             alert('Registration successful!');
+
+            // Redirect to the login page
+             window.location.href = '/';
+        });
+    </script>
 </body>
 </html>
